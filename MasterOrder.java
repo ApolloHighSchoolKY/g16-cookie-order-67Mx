@@ -16,7 +16,12 @@ public class MasterOrder{
   /** @return the sum of the number of boxes of all the cookie orders */
   public int getTotalBoxes()
   {
-    /* Part A answer goes here */
+    int sum = 0;
+    for(CookieOrder co: orders)
+      {
+        sum+=co.getNumBoxes();
+      }
+    return sum;
     
   }
 
@@ -28,7 +33,16 @@ public class MasterOrder{
   public int removeVariety(String cookieVar)
   {
     /* Part B answer goes here */
-    
+    int total=0;
+    for(int i=0; i<orders.size(); i++)
+    {
+      if(orders.get(i)==cookieVar)
+      {
+        total+=1;
+        orders.remove(i);
+      }
+    }
+    return total;
   }
 
   //There may be instance variables, constructors, and methods that are not shown.
